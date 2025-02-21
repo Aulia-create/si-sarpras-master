@@ -60,6 +60,7 @@
             font-size: 10px;
             line-height: 1.1;
         }
+        
     </style>
 </head>
 <body>
@@ -87,7 +88,8 @@
                 <th>NO</th>
                 <th>Nama User</th>
                 <th>Nama Barang</th>
-                <th>Tanggal Permintaan</th>
+                <th>Tanggal Peminjaman</th>
+                <th>Tanggal Pengembalian</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -97,14 +99,22 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->user->name }}</td>
                 <td>{{ $item->barang->nama_barang }}</td>
-                <td>{{ $item->tanggal_pengajuan }}</td>
+                <td>{{ $item->pengajuan->tanggal_pengajuan }}</td>
+                <td>{{ $item->tanggal_pengembalian }}</td>
                 <td>{{ ucfirst($item->status) }}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <div class="tanda tangan">
-                <<br><br>
+    <!-- <div style="text-align: right; padding-left: 30px; margin-top: 50px;">
+    <h5 style="margin: 0;">Pekanbaru, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</h5>
+    <h5 style="margin: 0;">Waka Sarana dan Prasarana</h5>
+    <br><br><br><br>
+    <h5 style="text-align: right; padding-left: 0px; margin: 0;">{{Auth::user()->name}}</h5>
+</div> -->
+
+<div class="tandatangan">
+                <br><br>
                 <p style="text-align: left; padding-left: 500px; margin: 0;">Pekanbaru,</p>
                 <p style="text-align: left; padding-left: 500px; margin: 0;">Diketahui Oleh</p>
                 <br><br>
@@ -114,5 +124,8 @@
             </div>
 
 
+
+
+</div>
 </body>
 </html>

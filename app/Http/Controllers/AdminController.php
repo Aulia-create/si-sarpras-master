@@ -38,7 +38,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Tampilkan semua data peminjaman barang habis pakai oleh user.
+     * Tampilkan semua data peminjaman barang tidak habis pakai oleh user.
      *
      * @return \Illuminate\Http\Response
      */

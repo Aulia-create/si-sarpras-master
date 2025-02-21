@@ -33,7 +33,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 // Route Admin
-Route::middleware('auth', 'role:Admin')->prefix('admin')->group(function () {
+Route::middleware('auth', 'role:Admin|Pengawas')->prefix('admin')->group(function () {
     Route::resource('barang', BarangController::class);
     Route::get('/peminjaman', [AdminController::class, 'peminjaman'])->name('admin.peminjaman');
     Route::get('/peminjaman/habispakai', [AdminController::class, 'peminjamanhp'])->name('admin.peminjamanhp');
@@ -47,10 +47,12 @@ Route::middleware('auth', 'role:Admin')->prefix('admin')->group(function () {
     Route::post('/pengembalian/{id}/reject', [AdminController::class, 'rejectpengembalian'])->name('admin.pengembalian.reject');
     // Rekap Laporan
     Route::get('/laporan/peminjaman', [LaporanController::class, 'laporanPeminjaman'])->name('admin.laporan.peminjaman');
+    Route::get('/laporan/peminjamanall', [LaporanController::class, 'laporanPeminjamanall'])->name('admin.laporan.peminjamanall');
     Route::get('/laporan/pengembalian', [LaporanController::class, 'laporanPengembalian'])->name('admin.laporan.pengembalian');
     
     // Cetak Laporan
     Route::get('/laporan/peminjaman/cetak-pdf', [LaporanController::class, 'cetakLaporanPeminjamanPDF'])->name('admin.laporan.peminjaman.pdf');
+    Route::get('/laporan/peminjamanall/cetak-pdf', [LaporanController::class, 'cetakLaporanPeminjamanallPDF'])->name('admin.laporan.peminjamanall.pdf');
     Route::get('/laporan/pengembalian/cetak-pdf', [LaporanController::class, 'cetakLaporanPengembalianPDF'])->name('admin.laporan.pengembalian.pdf');
 
     Route::resource('roles', RoleController::class);

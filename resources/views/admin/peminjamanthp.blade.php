@@ -15,7 +15,7 @@
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
       <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Tabel Peminjaman Barang Habis Pakai</h6>
+          <h6 class="m-0 font-weight-bold text-primary">Tabel Peminjaman Barang Tidak Habis Pakai</h6>
       </div>
       <div class="card-body">
           <div class="table-responsive">
@@ -25,7 +25,9 @@
                         <th style="width: 15px">NO</th>
                         <th>Nama User</th>
                         <th>Nama Barang</th>
+                        <th>Jumlah Barang</th>
                         <th>Tanggal Peminjaman</th>
+                        <th>Kelas/Jurusan</th>
                         <th>Kategori</th>
                         <th>Status</th>                
                         <th style="width: 140px">Action</th>
@@ -37,7 +39,9 @@
                         <td>{{ ++$key }}</td>
                         <td>{{ $row->user->name}}</td>
                         <td>{{ $row->barang->nama_barang }}</td>
+                        <td>{{ $row->jumlah_pinjaman }}</td>
                         <td>{{ $row->tanggal_pengajuan }}</td>
+                        <td>{{ $row->kelas }}</td>
                         <td>{{ $row->barang->kategori }}</td>
                         <td>{{ ucfirst($row->status) }}</td>
                         <td style="text-align: center">

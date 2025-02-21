@@ -14,10 +14,10 @@
                 <div class="card-body">
                     <label style="color: black; font-weight:bold;">Nama Pengguna</label>
                     <h4 style="padding-bottom: 8px">{{Auth::user()->name}}</h4>
-                    <label style="color: black; font-weight:bold;">Kelas / Jurusan</label>
-                    <h4 style="padding-bottom: 8px">{{Auth::user()->kelas}}</h4>
                     <label style="color: black; font-weight:bold;">Email</label>
                     <h4>{{Auth::user()->email}}</h4>
+                    <label style="color: black; font-weight:bold;">Peran</label>
+                    <h4>{{ Auth::user()->roles->first()->name}}</h4>
                 </div>
             </div>
         </div>

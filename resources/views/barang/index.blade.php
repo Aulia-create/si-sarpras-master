@@ -44,6 +44,8 @@
                         <td>{{ $row->spesifikasi }}</td>
                         <td>{{ $row->jumlah }}</td>
                         <td>{{ $row->satuan }}</td>
+
+
                         <td style="text-align: center">
                             <div class="d-sm-inline-block">
                               <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#editModal{{$row->id}}">
@@ -57,6 +59,7 @@
                               </a>
                             </div>
                         </td>
+
                       </tr>
                     @endforeach
                   </tbody>

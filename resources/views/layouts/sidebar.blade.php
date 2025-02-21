@@ -18,7 +18,7 @@
     <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('home')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span >Dashboard</span></a>
     </li>
     <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('profile')}}">
@@ -75,6 +75,7 @@
             <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Data Pengguna</span></a>
+        
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -85,14 +86,44 @@
             <div id="collapseTwo" class="collapse {{ request()->is('admin/laporan/peminjaman') ? 'show' : '' }} {{ request()->is('admin/laporan/pengembalian') ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Cetak Data Laporan:</h6>
-                    <a class="collapse-item {{ request()->is('admin/laporan/peminjaman') ? 'active' : '' }}" href="{{ route('admin.laporan.peminjaman') }}">Laporan Peminjam</a>
-                    <a class="collapse-item {{ request()->is('admin/laporan/pengembalian') ? 'active' : '' }}" href="{{ route('admin.laporan.pengembalian') }}">Laporan Pengembalian</a>
+                    <a class="collapse-item {{ request()->is('admin/laporan/peminjaman') ? 'active' : '' }}" href="{{ route('admin.laporan.peminjaman') }}">Laporan Barang Keluar</a>
+                    <a class="collapse-item {{ request()->is('admin/laporan/peminjamanall') ? 'active' : '' }}" href="{{ route('admin.laporan.peminjamanall') }}">Laporan Peminjaman</a>
+                    
+                    <!-- <a class="collapse-item {{ request()->is('admin/laporan/pengembalian') ? 'active' : '' }}" href="{{ route('admin.laporan.pengembalian') }}">Laporan Pengembalian</a> -->
                 </div>
             </div>
         </li>
     @endrole
 
-    @hasanyrole('Guru|Siswa|Pengawas')
+    @role('Pengawas')
+        <!-- <li class="nav-item {{ request()->is('admin/barang') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('barang.index') }}">
+                <i class="fas fa-fw fa-arrow-left"></i>
+                <span>Data Barang</span></a> -->
+                
+        <!-- </li>
+        <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('users.index') }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Data Pengguna</span></a> -->
+        <!-- </li> -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Data Laporan</span>
+            </a>
+            <div id="collapseTwo" class="collapse {{ request()->is('admin/laporan/peminjaman') ? 'show' : '' }} {{ request()->is('admin/laporan/pengembalian') ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Cetak Data Laporan:</h6>
+                    <a class="collapse-item {{ request()->is('admin/laporan/peminjaman') ? 'active' : '' }}" href="{{ route('admin.laporan.peminjaman') }}">Laporan Barang Keluar</a>
+                    <a class="collapse-item {{ request()->is('admin/laporan/peminjaman') ? 'active' : '' }}" href="{{ route('admin.laporan.peminjamanall') }}">Laporan Peminjaman</a>
+                    <!-- <a class="collapse-item {{ request()->is('admin/laporan/pengembalian') ? 'active' : '' }}" href="{{ route('admin.laporan.pengembalian') }}">Laporan Pengembalian</a> -->
+                </div>
+
+    @endrole
+
+    @hasanyrole('Guru|Siswa|Karyawan')
         <li class="nav-item {{ request()->is('pengajuan') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route ('pengajuan.index')}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
@@ -102,11 +133,12 @@
             <a class="nav-link" href="{{ route ('pengembalian.index')}}">
                 <i class="fas fa-fw fa-arrow-left"></i>
                 <span>Ajukan Pengembalian</span></a>
-        </li>
-        <li class="nav-item {{ request()->is('riwayat') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->is('pengembalian') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route ('riwayat')}}">
                 <i class="fas fa-fw fa-arrow-left"></i>
                 <span>Riwayat Peminjaman</span></a>
+        
+        </li>
         </li>
     @endhasanyrole
     

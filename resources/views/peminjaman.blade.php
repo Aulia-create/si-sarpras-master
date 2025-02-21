@@ -53,40 +53,7 @@
         </div>
     </div>
   </div>
-  <!-- DataTales Example -->
-  {{-- <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <a class="btn btn-sm btn-info card-title m-0" type="button" data-toggle="modal" data-target="#addModal">
-          Tambah Data
-        </a>
-      </div>
-      <div class="card-body">
-          <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                      <tr>
-                        <th style="width: 15px">NO</th>
-                        <th>Nama Barang</th>
-                        <th>Nama Peminjam</th>
-                        <th>Tanggal Pengajuan</th>
-                        <th>Status</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($pengajuans as $key => $row)     
-                      <tr>
-                        <td>{{ ++$key }}</td>
-                        <td>{{ $row->barang->nama_barang }}</td>
-                        <td>{{ $row->user->name }}</td>
-                        <td>{{ $row->tanggal_pengajuan }}</td>
-                        <td>{{ ucfirst($row->status) }}</td>
-                      </tr>
-                    @endforeach
-                  </tbody>
-              </table>
-          </div>
-      </div>
-  </div> --}}
+ 
 </div>
 
 @foreach ($barangs as $row)
@@ -136,6 +103,10 @@
             <div class="form-group">
               <label for="title">Jumlah Pinjaman</label>
               <input type="number" class="form-control" name="jumlah_pinjaman" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="title">Kelas</label>
+              <input type="text" class="form-control" name="kelas">
             </div>
             <div class="form-group">
               <label for="title">Tanggal Pengajuan</label>

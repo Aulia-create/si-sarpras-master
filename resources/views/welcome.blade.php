@@ -41,7 +41,7 @@
 
                 <div class="mt-10">
                     <div class="grid grid-cols-1 gap-6 lg:gap-8">
-                        <h5 class="flex justify-center" style="font-size: 30px">Selamat Datang</h5>
+                        <h5 class="flex justify-center" style="font-size: 30px">Selamat Datang Sitem Informasi Pengelolaan Inventaris Barang</h5>
                         <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
                                 <img src="{{asset('assets/img/halaman-web.png')}}" alt="">

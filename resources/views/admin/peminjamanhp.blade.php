@@ -25,7 +25,8 @@
                         <th style="width: 15px">NO</th>
                         <th>Nama User</th>
                         <th>Nama Barang</th>
-                        <th>Tanggal Peminjaman</th>
+                        <th>Jumlah Permintaan</th>
+                        <th>Tanggal Permintaan</th>
                         <th>Kategori</th>
                         <th>Status</th>                
                         <th style="width: 140px">Action</th>
@@ -37,6 +38,7 @@
                         <td>{{ ++$key }}</td>
                         <td>{{ $row->user->name}}</td>
                         <td>{{ $row->barang->nama_barang }}</td>
+                        <td>{{ $row->jumlah_pinjaman }}</td>
                         <td>{{ $row->tanggal_pengajuan }}</td>
                         <td>{{ $row->barang->kategori }}</td>
                         <td>{{ ucfirst($row->status) }}</td>
@@ -46,6 +48,11 @@
                                 @csrf
                                 <button type="submit" class="btn btn-success btn-sm">Approve</button>
                               </form>
+
+                              <!-- <form action="{{ route('admin.peminjaman.reject', $row->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Tolak Peminjaman Barang?');">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm">Reject</button>
+                              </form> -->
 
                               <form action="{{ route('admin.peminjaman.reject', $row->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Tolak Peminjaman Barang?');">
                                 @csrf
@@ -57,11 +64,8 @@
                                     <i class="fas fa-eye"> </i> Lihat Detail
                                 </a>
                               </div>
-                              {{-- <form action="{{ route('admin.peminjaman.hapuspeminjaman', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus?');">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit">Delete Data</button>
-                              </form> --}}
+                              
+                              
                             @endif
                         </td>
                       </tr>

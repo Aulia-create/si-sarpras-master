@@ -54,6 +54,7 @@ class PengajuanController extends Controller
             'barang_id' => $request->barang_id,
             'tanggal_pengajuan' => $request->tanggal_pengajuan,
             'jumlah_pinjaman' => $request->jumlah_pinjaman,
+            'kelas' => $request->kelas,
             'status' => 'pending',
         ]);
 
