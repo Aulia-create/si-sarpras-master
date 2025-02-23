@@ -74,7 +74,7 @@
         <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>Data Pengguna</span></a>
+                <span>Data Pengguna</span></a>  
         
         </li>
         <li class="nav-item">

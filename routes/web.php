@@ -57,6 +57,7 @@ Route::middleware('auth', 'role:Admin|Pengawas')->prefix('admin')->group(functio
 
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
+
 });
 
 // Route Pengguna

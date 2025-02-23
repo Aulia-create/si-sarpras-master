@@ -154,4 +154,5 @@ class AdminController extends Controller
     
         return back()->with('success','Data berhasil dihapus');
     }
+
 }
